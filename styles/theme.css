@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Funnel+Display:wght@300..800&display=swap');
+
 /*  
  *  Coloque esse arquivo em todos os arquivos .html que forem utilizados
  *  ao longo do projeto.
@@ -24,10 +26,79 @@
     box-sizing: border-box;
     transition: background-color 200ms ease,
                 color 200ms ease;
+    text-decoration: none;
 }
 
 body {
     background-color: var(--background-color);
+}
+
+img {
+    display: block;
+}
+
+a, p, span, small,
+h1, h2, h3, h4, h5, h6 {
+    color: var(--foreground-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Funnel Display, Arial, monospace;
+}
+
+a, p, span, small {
+    font-family: DM Sans, Arial, sans-serif;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 5rem;
+    padding: 1rem 20vw;
+    background-color: var(--background-color);
+    
+    box-shadow: 0 0 20px
+        color-mix(in srgb, var(--foreground-color) 30%, transparent);
+}
+
+#header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+#header nav a {
+    position: relative;
+}
+
+#header .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#header .logo img {
+    height: 100%;
+    object-fit: contain;
+}
+
+#header nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--foreground-color);
+    transition: width 200ms ease;
+}
+
+#header nav a:hover::before {
+    width: 100%;
 }
 
 #theme-button {
@@ -41,6 +112,14 @@ body {
     border-radius: 50%;
 
     padding: 1rem;
+}
+
+#theme-button img {
+    filter: invert(1);
+}
+
+:root.dark #theme-button img {
+    filter: none;
 }
 
 #theme-button:hover {
