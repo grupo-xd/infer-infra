@@ -74,8 +74,8 @@ function renderIcon() {
 
     favicon.href =
         actualTheme === theme.DARK
-            ? iconImages.dark
-            : iconImages.light
+            ? iconImages.light
+            : iconImages.dark
 }
 
 function renderTheme() {
