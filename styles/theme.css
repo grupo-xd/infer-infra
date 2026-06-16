@@ -1,0 +1,48 @@
+/*  
+ *  Coloque esse arquivo em todos os arquivos .html que forem utilizados
+ *  ao longo do projeto.
+ */
+
+/*  
+ *  :root aqui é o elemento <html>, assim, todos os elementos são afetados
+ */
+
+:root {
+    --background-color: white;
+    --foreground-color: black;
+    --primary-color: #C95A5A;
+}
+
+:root.dark {
+    --background-color: black;
+    --foreground-color: white;
+    --primary-color: #D97A7A;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: background-color 200ms ease,
+                color 200ms ease;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+#theme-button {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vh;
+
+    background-color: var(--foreground-color);
+    
+    border: 0;
+    border-radius: 50%;
+
+    padding: 1rem;
+}
+
+#theme-button:hover {
+    cursor: pointer;
+}
