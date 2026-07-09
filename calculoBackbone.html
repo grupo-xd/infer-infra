@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gerador de Especificação de Fibra Óptica</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f4f4f9;
+                color: #333;
+            }
+            form {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                max-width: 600px;
+                margin: 0 auto;
+                box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            }
+            fieldset {
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            legend {
+                font-weight: bold;
+                padding: 0 5px;
+            }
+            .campo {
+                margin-bottom: 12px;
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                margin-bottom: 4px;
+                font-size: 14px;
+            }
+            input,
+            select {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+            button {
+                width: 100%;
+                padding: 12px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form-orcamento">
+            <h2>Orçamento de Infraestrutura Óptica</h2>
+
+            <fieldset>
+                <legend>Configurações Gerais do Link</legend>
+                <div class="campo">
+                    <label for="outdoor-speed"
+                        >Velocidade do Link Externo:</label
+                    >
+                    <select id="outdoor-speed" required>
+                        <option value="1 GB">1 Gbps (Gigabit)</option>
+                        <option value="10 GB" selected>
+                            10 Gbps (10 Gigabit)
+                        </option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="growth-margin"
+                        >Margem de Crescimento/Folga (%):</label
+                    >
+                    <input
+                        type="number"
+                        id="growth-margin"
+                        value="20"
+                        required
+                        min="0"
+                    />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Prédio 1 (Onde fica a SEQ)</legend>
+                <div class="campo">
+                    <label for="building-1-name">Nome do Prédio:</label>
+                    <input
+                        type="text"
+                        id="building-1-name"
+                        value="Prédio Principal (A)"
+                        required
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-1-floors">Número de Andares:</label>
+                    <input
+                        type="number"
+                        id="building-1-floors"
+                        value="4"
+                        required
+                        min="1"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-1-floor-height"
+                        >Altura de cada Piso (metros):</label
+                    >
+                    <input
+                        type="number"
+                        id="building-1-floor-height"
+                        value="3"
+                        required
+                        min="1"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-1-rack-shaft-dist"
+                        >Distância do Rack ao Shaft (metros):</label
+                    >
+                    <input
+                        type="number"
+                        id="building-1-rack-shaft-dist"
+                        value="10"
+                        required
+                        min="0"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-1-links-per-floor"
+                        >Links Ativos por Andar:</label
+                    >
+                    <input
+                        type="number"
+                        id="building-1-links-per-floor"
+                        value="2"
+                        required
+                        min="1"
+                    />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Prédio 2 (Remoto)</legend>
+                <div class="campo">
+                    <label for="building-2-name">Nome do Prédio:</label>
+                    <input
+                        type="text"
+                        id="building-2-name"
+                        value="Prédio Anexo (B)"
+                        required
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-2-floors">Número de Andares:</label>
+                    <input
+                        type="number"
+                        id="building-2-floors"
+                        value="2"
+                        required
+                        min="1"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-2-floor-height"
+                        >Altura de cada Piso (metros):</label
+                    >
+                    <input
+                        type="number"
+                        id="building-2-floor-height"
+                        value="3"
+                        required
+                        min="1"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-2-rack-shaft-dist"
+                        >Distância do Rack ao Shaft (metros):</label
+                    >
+                    <input
+                        type="number"
+                        id="building-2-rack-shaft-dist"
+                        value="5"
+                        required
+                        min="0"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-2-links-per-floor"
+                        >Links Ativos por Andar:</label
+                    >
+                    <input
+                        type="number"
+                        id="building-2-links-per-floor"
+                        value="4"
+                        required
+                        min="1"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-2-distance"
+                        >Distância entre os Prédios (metros):</label
+                    >
+                    <input
+                        type="number"
+                        id="building-2-distance"
+                        value="250"
+                        required
+                        min="1"
+                    />
+                </div>
+                <div class="campo">
+                    <label for="building-2-inframode"
+                        >Infraestrutura Externa:</label
+                    >
+                    <select id="building-2-inframode">
+                        <option value="subterraneo">Subterrâneo (Duto)</option>
+                        <option value="aereo">Aéreo (Posteado)</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <button type="submit">Calcular Especificação</button>
+        </form>
+
+        <script
+            type="module"
+            src="./scripts/backbone/calculoBackbone.js"
+        ></script>
+    </body>
+</html>
