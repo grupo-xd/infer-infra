@@ -1,4 +1,4 @@
-import fibrasOpticasDisponiveis from "./listaFibrasOpticasDisponiveis.js";
+import fibrasOpticasDisponiveis from "./ListaFibrasOpticasDisponiveis.js";
 import Midia from "./Midia.js";
 import PadraoDeTransmissao from "./PadraoDeTransmissao.js";
 
