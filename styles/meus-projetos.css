@@ -1,90 +1,217 @@
 .hero {
-    max-width: 1200px;
-    margin: 3rem auto 1.5rem;
-    padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 3rem auto 1.5rem;
+  padding: 0 1.5rem;
 }
 
 .hero h2 {
-    font-size: clamp(2.25rem, 4vw, 4rem);
-    margin-bottom: 0.5rem;
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .projects-grid {
-    width: min(1200px, calc(100% - 3rem));
-    margin: 0 auto 4rem;
-    padding: 0 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 .project-card,
 .new-project-card {
-    flex: 1 1 240px;
-    min-height: 260px;
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    border: 1px solid color-mix(in srgb, var(--foreground-color) 16%, transparent);
-    background: color-mix(in srgb, var(--background-color) 90%, var(--primary-color) 10%);
-    box-shadow: 0 20px 40px -30px color-mix(in srgb, var(--foreground-color) 50%, transparent);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  flex: 1 1 240px;
+  min-height: 260px;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 16%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--background-color) 90%,
+    var(--primary-color) 10%
+  );
+  box-shadow: 0 20px 40px -30px
+    color-mix(in srgb, var(--foreground-color) 50%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .project-card h3,
 .new-project-card h3 {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .project-card p,
 .new-project-card p {
-    line-height: 1.5;
-    opacity: 0.85;
+  line-height: 1.5;
+  opacity: 0.85;
 }
 
 .project-card a {
-    margin-top: auto;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.9rem 1rem;
-    border-radius: 999px;
-    background: var(--foreground-color);
-    color: var(--background-color);
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  background: var(--foreground-color);
+  color: var(--background-color);
 }
 
 .project-card a:hover {
-    background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 .new-project-card {
-    justify-content: center;
-    align-items: center;
-    border-style: dashed;
+  justify-content: center;
+  align-items: center;
+  border-style: dashed;
 }
 
 .floating-button {
-    width: 100%;
-    min-height: 4rem;
-    border-radius: 999px;
-    background-color: transparent;
-    color: var(--foreground-color);
-    border: 2px dashed var(--foreground-color);
-    font-size: 2rem;
-    font-weight: 700;
+  width: 100%;
+  min-height: 4rem;
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--foreground-color);
+  border: 2px dashed var(--foreground-color);
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .floating-button:hover {
-    background-color: var(--primary-color);
-    cursor: pointer;
+  background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 .empty-state {
-    padding: 1rem 0 0;
-    opacity: 0.75;
+  padding: 1rem 0 0;
+  opacity: 0.75;
+}
+
+dialog#new-project-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 16%, transparent);
+  border-radius: 1.5rem;
+  background: var(--background-color);
+  color: var(--foreground-color);
+  padding: 2rem;
+  width: min(500px, calc(100% - 2rem));
+  box-shadow: 0 30px 60px -15px color-mix(in srgb, #000 60%, transparent);
+}
+
+dialog#new-project-modal::backdrop {
+  background: color-mix(in srgb, #000 60%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+#new-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#new-project-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+#new-project-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: -0.5rem;
+}
+
+#new-project-form input,
+#new-project-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 20%, transparent);
+  border-radius: 1rem;
+  background: color-mix(
+    in srgb,
+    var(--background-color) 95%,
+    var(--foreground-color) 5%
+  );
+  color: var(--foreground-color);
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+#new-project-form input:focus,
+#new-project-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+#new-project-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.modal-actions button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    opacity 0.2s;
+}
+
+.modal-actions button[type="submit"] {
+  background: var(--foreground-color);
+  color: var(--background-color);
+}
+
+.modal-actions button[type="submit"]:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.modal-actions button#cancel-project {
+  background: transparent;
+  color: var(--foreground-color);
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 25%, transparent);
+}
+
+.modal-actions button#cancel-project:hover {
+  background: color-mix(in srgb, var(--foreground-color) 8%, transparent);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+dialog#new-project-modal[open] {
+  animation: modalFadeIn 0.25s ease-out forwards;
 }
