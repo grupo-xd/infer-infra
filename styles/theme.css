@@ -37,7 +37,7 @@ img {
     display: block;
 }
 
-a, p, span, small,
+a, p, span, small, button, input, label, legend, strong,
 h1, h2, h3, h4, h5, h6 {
     color: var(--foreground-color);
 }
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Funnel Display, Arial, monospace;
 }
 
-a, p, span, small {
+a, p, span, small, button, input, label, legend, strong {
     font-family: DM Sans, Arial, sans-serif;
 }
 

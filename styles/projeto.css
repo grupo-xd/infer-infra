@@ -1,0 +1,238 @@
+.project-page {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto 4rem;
+  padding: 2rem 0 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-summary,
+.editor-panel,
+.modules-section,
+.spec-list {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 16%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--background-color) 90%,
+    var(--primary-color) 10%
+  );
+  box-shadow: 0 20px 40px -30px
+    color-mix(in srgb, var(--foreground-color) 50%, transparent);
+}
+
+.modules-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-summary h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  margin-top: 0.25rem;
+}
+
+.project-description,
+.section-note,
+.module-status {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.specification-output-wrapper {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.result-panel {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 12%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--background-color) 94%,
+    var(--primary-color) 6%
+  );
+  display: grid;
+  gap: 1rem;
+}
+
+.result-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.result-item {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--foreground-color) 5%, transparent);
+}
+
+.result-item strong {
+  font-size: 0.9rem;
+}
+
+.result-item span {
+  line-height: 1.45;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.editor-panel,
+.spec-list,
+.spec-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.editor-panel input,
+.editor-panel textarea,
+.spec-panel input,
+.spec-panel select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 20%, transparent);
+  border-radius: 1rem;
+  background: var(--background-color);
+  color: var(--foreground-color);
+  outline: none;
+}
+
+.editor-panel input:focus,
+.editor-panel textarea:focus,
+.spec-panel input:focus,
+.spec-panel select:focus {
+  border-color: var(--primary-color);
+}
+
+.editor-panel textarea,
+.spec-panel textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.modules-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.module-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 12%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--background-color) 88%,
+    var(--foreground-color) 12%
+  );
+}
+
+.module-card header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.module-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.module-actions button,
+.spec-list button,
+.spec-panel button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.15rem;
+  background: var(--foreground-color);
+  color: var(--background-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.module-actions button.secondary {
+  background: transparent;
+  color: var(--foreground-color);
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 25%, transparent);
+}
+
+.module-actions button:disabled,
+.spec-list button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spec-panel {
+  padding-top: 0.25rem;
+}
+
+.spec-panel fieldset {
+  border: 1px solid color-mix(in srgb, var(--foreground-color) 14%, transparent);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.spec-panel legend {
+  font-weight: 700;
+  padding: 0 0.35rem;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
+}
+
+.spec-grid .field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.spec-grid label,
+.editor-panel label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.spec-notes {
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.spec-panel[hidden],
+.module-card[hidden] {
+  display: none;
+}
+
+.spec-list {
+  justify-items: end;
+}
+
+@media (max-width: 720px) {
+  .project-page {
+    width: min(100%, calc(100% - 1.5rem));
+  }
+
+  .spec-list {
+    justify-items: stretch;
+  }
+
+  .spec-list button,
+  .module-actions button {
+    width: 100%;
+  }
+}

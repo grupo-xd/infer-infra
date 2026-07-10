@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Projeto</title>
+
+        <link rel="stylesheet" href="styles/theme.css" />
+        <link rel="stylesheet" href="styles/projeto.css" />
+    </head>
+    <body>
+        <header id="header">
+            <a href="meus-projetos.html" class="logo">
+                <img src="assets/logo/logo.png" alt="Logo do InferInfra" />
+                <h1>InferInfra</h1>
+            </a>
+
+            <nav>
+                <a href="meus-projetos.html">Meus projetos</a>
+            </nav>
+        </header>
+
+        <main class="project-page">
+            <section class="project-summary">
+                <p class="eyebrow">Projeto em edição</p>
+                <h2 id="project-name">Carregando projeto</h2>
+                <p id="project-description" class="project-description"></p>
+            </section>
+
+            <section class="editor-panel">
+                <h3>Dados do projeto</h3>
+
+                <label for="project-name-input">Nome do projeto</label>
+                <input id="project-name-input" type="text" maxlength="100" />
+
+                <label for="project-description-input">Descrição</label>
+                <textarea
+                    id="project-description-input"
+                    rows="4"
+                    maxlength="500"
+                ></textarea>
+            </section>
+
+            <section class="modules-section">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">Módulos</p>
+                        <h3>Adicionar backbone ou malha horizontal</h3>
+                    </div>
+                    <p class="section-note">
+                        As alterações são salvas automaticamente no navegador.
+                    </p>
+                </div>
+
+                <div id="modules-grid" class="modules-grid"></div>
+            </section>
+
+            <section class="spec-list"></section>
+        </main>
+
+        <button id="theme-button" type="button">
+            <img src="" alt="Alternar tema" />
+        </button>
+
+        <script type="module" src="scripts/projetos/edit-projetos.js"></script>
+        <script src="scripts/ui/theme.js"></script>
+    </body>
+</html>
