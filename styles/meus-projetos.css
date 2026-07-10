@@ -1,0 +1,90 @@
+.hero {
+    max-width: 1200px;
+    margin: 3rem auto 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.hero h2 {
+    font-size: clamp(2.25rem, 4vw, 4rem);
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
+.projects-grid {
+    width: min(1200px, calc(100% - 3rem));
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.project-card,
+.new-project-card {
+    flex: 1 1 240px;
+    min-height: 260px;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--foreground-color) 16%, transparent);
+    background: color-mix(in srgb, var(--background-color) 90%, var(--primary-color) 10%);
+    box-shadow: 0 20px 40px -30px color-mix(in srgb, var(--foreground-color) 50%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-card h3,
+.new-project-card h3 {
+    font-size: 1.6rem;
+}
+
+.project-card p,
+.new-project-card p {
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.project-card a {
+    margin-top: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    background: var(--foreground-color);
+    color: var(--background-color);
+}
+
+.project-card a:hover {
+    background: var(--primary-color);
+}
+
+.new-project-card {
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+}
+
+.floating-button {
+    width: 100%;
+    min-height: 4rem;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--foreground-color);
+    border: 2px dashed var(--foreground-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.floating-button:hover {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.empty-state {
+    padding: 1rem 0 0;
+    opacity: 0.75;
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InferInfra</title>
+
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/meus-projetos.css" />
+  </head>
+  <body>
+    <header id="header">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/logo.png" alt="Logo do InferInfra" />
+        <h1>InferInfra</h1>
+      </a>
+
+      <nav>
+        <a href="meus-projetos.html" aria-current="page">Meus projetos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Meus projetos</h2>
+        <p>Selecione um projeto ou crie um novo.</p>
+      </section>
+
+      <section
+        id="projects-section"
+        class="projects-grid"
+        aria-label="Lista de projetos"
+      >
+        <button
+          id="new-project-button"
+          class="floating-button"
+          title="Novo projeto"
+        >
+          +
+        </button>
+      </section>
+    </main>
+
+    <button id="theme-button" type="button">
+      <img src="" alt="Alternar tema" />
+    </button>
+
+    <dialog id="new-project-modal">
+      <form id="new-project-form" method="dialog">
+        <h2>Novo projeto</h2>
+
+        <label for="project-name"> Nome do projeto </label>
+
+        <input
+          id="project-name"
+          type="text"
+          maxlength="100"
+          required
+          autocomplete="off"
+          autofocus
+        />
+
+        <label for="project-description"> Descrição </label>
+
+        <textarea id="project-description" rows="4" maxlength="500"></textarea>
+
+        <div class="modal-actions">
+          <button type="button" id="cancel-project">Cancelar</button>
+
+          <button type="submit">Criar projeto</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="scripts/ui/theme.js"></script>
+    <script src="scripts/projetos/list-projetos.js"></script>
+  </body>
+</html>
